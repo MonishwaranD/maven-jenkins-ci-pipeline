@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Git') {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/MonishwaranD/maven-jenkins-ci-pipeline.git'
             }
@@ -15,9 +15,7 @@ pipeline {
 
         stage('Build and Test') {
             steps {
-                dir('simple-maven-app') {
-                    bat 'mvn clean test'
-                }
+                bat 'mvn clean test'
             }
         }
     }
